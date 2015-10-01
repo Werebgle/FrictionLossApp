@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">Friction Loss</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="wfdTitleTextView">Fire Department Friction Loss Calculator</string>
+
+    <string name="psiAtThePump">PSI AT THE PUMP</string>
+
+    <string name="calculate">CALCULATE</string>
+
+    <string name="reset">RESET</string>
+
+    <string name="wfdContentDescription">Worthington Fire Logo</string>
+
+    <string name="settingsnozzle1">1 &#190; Fog Nozzle</string>
+
+    <string name="settingsnozzle2">1 &#190; Smooth Nozzle</string>
+
+    <string name="settingsnozzle3">2 &#189; Fog Nozzle</string>
+
+    <string name="settingsnozzle4">2 &#189; Smooth Nozzle</string>
+
+    <string name="blitzfog">Blitz Fog</string>
+
+    <string name="blitzsmooth">Blitz Smooth</string>
+
+    <string name="settings1handline">1 &#190;" Hose</string>
+
+    <string name="settings2handline">2 &#189;" Hose</string>
+
+    <string name="settings3handline">3" Inch Hose</string>
+
+    <string name="settingsappliances">Appliances</string>
+
+    <string name="settingselevation">Elevation</string>
+
+    <string name="alert_dialog">Remember To Set Your Friction Loss Values In The Settings Page!</string>
+
+    <string name="alert_title">For Educational Purposes Only</string>
+
+    <string name="alert_button">OK</string>
+
+    <string-array name="nozzle">
+        <item>Nozzle</item>
+        <item>1 &#190; Fog</item>
+        <item>1 &#190; Smooth</item>
+        <item>2 &#189; Fog</item>
+        <item>2 &#189; Smooth</item>
+        <item>Blitz Fog</item>
+        <item>Blitz Smooth</item>
+    </string-array>
+
+    <string-array name="numberSticks1">
+        <item>1 &#190; Hose</item>
+        <item>100 feet</item>
+        <item>200 feet</item>
+        <item>300 feet</item>
+        <item>400 feet</item>
+        <item>500 feet</item>
+        <item>600 feet</item>
+        <item>700 feet</item>
+        <item>800 feet</item>
+        <item>900 feet</item>
+        <item>1000 feet</item>
+    </string-array>
+
+    <string-array name="numberSticks2">
+        <item>2 &#189; Hose</item>
+        <item>100 feet</item>
+        <item>200 feet</item>
+        <item>300 feet</item>
+        <item>400 feet</item>
+        <item>500 feet</item>
+        <item>600 feet</item>
+        <item>700 feet</item>
+        <item>800 feet</item>
+        <item>900 feet</item>
+        <item>1000 feet</item>
+    </string-array>
+
+    <string-array name="numberSticks3">
+        <item>3 Inch Hose</item>
+        <item>100 feet</item>
+        <item>200 feet</item>
+        <item>300 feet</item>
+        <item>400 feet</item>
+        <item>500 feet</item>
+        <item>600 feet</item>
+        <item>700 feet</item>
+        <item>800 feet</item>
+        <item>900 feet</item>
+        <item>1000 feet</item>
+    </string-array>
+
+    <string-array name="numberAppliances">
+        <item>Appliances</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="numberFloors">
+        <item>Elevation</item>
+        <item>Ground</item>
+        <item>2nd Floor</item>
+        <item>3rd Floor</item>
+        <item>4th Floor</item>
+        <item>5th Floor</item>
+        <item>6th Floor</item>
+        <item>7th Floor</item>
+        <item>8th Floor</item>
+        <item>9th Floor</item>
+        <item>10th Floor</item>
+    </string-array>
+</resources>

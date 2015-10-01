@@ -1,0 +1,189 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    tools:context=".MainActivity"
+    android:background="@android:color/background_light"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ff1719"
+            android:paddingTop="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/logoImageView"
+                android:src="@drawable/image"
+                android:layout_gravity="start"
+                android:layout_marginTop="08dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:contentDescription="@string/wfdContentDescription"
+                android:paddingTop="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/wfdTitleTextView"
+                android:id="@+id/wfdTitleTextView"
+                android:textSize="25sp"
+                android:paddingBottom="8dp"
+                android:textColor="@android:color/black"
+                android:layout_gravity="right"
+                android:minLines="2"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+
+            <Spinner
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/nozzleSpinner"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:layout_gravity="left"/>
+
+            <Spinner
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/hose1Spinner"
+                android:layout_gravity="right"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"            >
+
+            <Spinner
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/hose2Spinner"
+                android:layout_gravity="left"
+                android:clickable="true"/>
+
+            <Spinner
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/hose3Spinner"
+                android:paddingBottom="8dp"
+                android:layout_gravity="right"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <Spinner
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/applianceSpinner"
+                android:layout_gravity="left"
+                android:clickable="true"/>
+
+            <Spinner
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/floorSpinner"
+                android:layout_gravity="right"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:background="#feffba"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/resultTextView"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="24sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="#f9ff2c"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="85dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/psiAtThePump"
+                android:id="@+id/psiLabelTextView"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate"
+                android:id="@+id/calculateButton"
+                android:background="#1313ff"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:id="@+id/resetButton"
+                android:background="#1313ff"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
