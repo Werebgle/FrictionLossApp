@@ -51,7 +51,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        alertUser();
+        //Calls Alert Dialog Fragment if User has not clicked Save Button in Settings.
+        if (userInfoSet()){
+            alertUser();
+        }
 
         mSpinner = (Spinner)findViewById(R.id.nozzleSpinner);
         mSpinner1 = (Spinner)findViewById(R.id.hose1Spinner);
@@ -106,6 +109,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         resultTextView = (TextView)findViewById(R.id.resultTextView);
     }
 
+    //Method that determines if User clicked Save Button
+    public boolean userInfoSet(){
+        SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+        boolean info11 = sharedPreferences.getBoolean("userclicksave", true);
+        return info11;
+    }
+
+    //Dialog Fragment method
     private void alertUser() {
         AlertDialogFragment dialog = new AlertDialogFragment();
         dialog.show(getFragmentManager(), "alert_dialog");
@@ -177,7 +188,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         return info10;
     }
 
-
     public int result(){
         int n1 = resultHandFog();
         int n2 = resultHandSmooth();
@@ -213,17 +223,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int mmFLoss5 = fLossArray2[mItem5.intValue()];
         mFLoss5 = elev * mmFLoss5;
 
-//        int [] fLossArray2 = {0,10,20,30,40,50,60,70,80,90,100};
-//        mFLoss2 = fLossArray2[mItem2.intValue()];
-//
-//        int [] fLossArray3 = {0,5,10,15,20,25,30,35,40,45,50};
-//        mFLoss3 = fLossArray3[mItem3.intValue()];
-//
-//        mFLoss4 = fLossArray2[mItem4.intValue()];
-//
-//        int [] fLossArray5 = {0,0,5,10,15,20,25,30,35,40,45};
-//        mFLoss5 = fLossArray5[mItem5.intValue()];
-
         mValue = (mFLoss + mFLoss1 + mFLoss2 + mFLoss3 + mFLoss4 + mFLoss5);
         return mValue;
     }
@@ -247,9 +246,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-//            Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT)
-//                    .show();
-
             Intent intent = new Intent(this, Settings.class);
             startActivity(intent);
             return true;

@@ -26,7 +26,6 @@ public class Settings extends AppCompatActivity{
     private EditText mAppliancesTextView;
     private EditText mElevationTextView;
 
-
     private Button saveButton;
     private Button clearButton;
 
@@ -48,7 +47,6 @@ public class Settings extends AppCompatActivity{
         mAppliancesTextView = (EditText)findViewById(R.id.applianceTextView);
         mElevationTextView = (EditText)findViewById(R.id.elevationTextView);
 
-
         saveButton = (Button)findViewById(R.id.saveButton);
 
         displayValues();
@@ -57,7 +55,6 @@ public class Settings extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("handfog", Integer.parseInt(mHandFogTextView.getText().toString()));
                 editor.putInt("handsmooth", Integer.parseInt(mHandSmoothTextView.getText().toString()));
@@ -70,8 +67,7 @@ public class Settings extends AppCompatActivity{
                 editor.putInt("handline3", Integer.parseInt(mHandline3TextView.getText().toString()));
                 editor.putInt("appliance", Integer.parseInt(mAppliancesTextView.getText().toString()));
                 editor.putInt("elevation", Integer.parseInt(mElevationTextView.getText().toString()));
-
-
+                editor.putBoolean("userclicksave", false);
                 editor.apply();
 
                 Toast.makeText(Settings.this, "Settings Saved", Toast.LENGTH_LONG).show();
@@ -84,17 +80,14 @@ public class Settings extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.clear();
                 editor.apply();
-
                 displayValues();
 
                 Toast.makeText(Settings.this, "Settings Cleared", Toast.LENGTH_LONG).show();
             }
         });
-
     }
     public void displayValues() {
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
@@ -110,7 +103,6 @@ public class Settings extends AppCompatActivity{
         int info9 = sharedPreferences.getInt("appliance", 0);
         int info10 = sharedPreferences.getInt("elevation", 0);
 
-
         mHandFogTextView.setText(String.valueOf(info));
         mHandSmoothTextView.setText(String.valueOf(info1));
         mFogTextView.setText(String.valueOf(info2));
@@ -122,7 +114,6 @@ public class Settings extends AppCompatActivity{
         mHandline3TextView.setText(String.valueOf(info8));
         mAppliancesTextView.setText(String.valueOf(info9));
         mElevationTextView.setText(String.valueOf(info10));
-
     }
 }
 

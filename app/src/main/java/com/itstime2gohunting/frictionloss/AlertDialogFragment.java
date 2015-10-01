@@ -6,9 +6,6 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
 
-/**
- * Created by John on 9/30/2015.
- */
 public class AlertDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
