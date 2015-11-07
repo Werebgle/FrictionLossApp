@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Friction Loss</string>
+    <string name="app_name">Friction Loss Calculator</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="values_title">Friction Loss Values</string>
+
+    <string name="action_settings">FL Values</string>
 
     <string name="wfdTitleTextView">Fire Department Friction Loss Calculator</string>
 

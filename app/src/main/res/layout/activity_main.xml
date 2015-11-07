@@ -13,131 +13,338 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="#ff1719"
-            android:paddingTop="8dp">
+            android:text="Friction Loss Calculator"
+            android:id="@+id/textView17"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/logoImageView"
-                android:src="@drawable/image"
-                android:layout_gravity="start"
-                android:layout_marginTop="08dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
-                android:contentDescription="@string/wfdContentDescription"
-                android:paddingTop="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/wfdTitleTextView"
-                android:id="@+id/wfdTitleTextView"
-                android:textSize="25sp"
-                android:paddingBottom="8dp"
-                android:textColor="@android:color/black"
-                android:layout_gravity="right"
-                android:minLines="2"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hose Line 1"
+            android:id="@+id/textView14"
+            android:background="#7985ff"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            android:background="#7985ff">
 
             <Spinner
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/nozzleSpinner"
-                android:layout_marginTop="20dp"
                 android:clickable="true"
-                android:layout_gravity="left"/>
+                android:layout_weight="1"/>
 
             <Spinner
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/hose1Spinner"
-                android:layout_gravity="right"
-                android:clickable="true"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"            >
+                android:clickable="true"
+                android:layout_weight="1"/>
 
             <Spinner
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/hose2Spinner"
-                android:layout_gravity="left"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#7985ff"
+            android:layout_marginBottom="2dp">
 
             <Spinner
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/hose3Spinner"
-                android:paddingBottom="8dp"
-                android:layout_gravity="right"
-                android:clickable="true"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+                android:clickable="true"
+                android:layout_weight="1"/>
 
             <Spinner
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/applianceSpinner"
-                android:layout_gravity="left"
+                android:clickable="true"
+                android:layout_weight="1"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/floorSpinner"
+                android:clickable="true"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hose Line 2"
+            android:id="@+id/textView15"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/nozzleSpinner2"
+                android:layout_weight="1"
                 android:clickable="true"/>
 
             <Spinner
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/floorSpinner"
-                android:layout_gravity="right"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/hose1Spinner2"
+                android:layout_weight="1"
                 android:clickable="true"/>
 
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/hose2Spinner2"
+                android:layout_weight="1"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/hose3Spinner2"
+                android:layout_weight="1"
+                android:clickable="true"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/applianceSpinner2"
+                android:layout_weight="1"
+                android:clickable="true"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/floorSpinner2"
+                android:layout_weight="1"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hose Line 3"
+            android:id="@+id/textView16"
+            android:background="#ff2f2b"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff2f2b">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/nozzleSpinner3"
+                android:layout_weight="1"
+                android:clickable="true"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/hose1Spinner3"
+                android:layout_weight="1"
+                android:clickable="true"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/hose2Spinner3"
+                android:layout_weight="1"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff2f2b"
+            android:layout_marginBottom="2dp">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/hose3Spinner3"
+                android:layout_weight="1"
+                android:clickable="true"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/applianceSpinner3"
+                android:layout_weight="1"
+                android:clickable="true"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/floorSpinner3"
+                android:layout_weight="1"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="2dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/resultTextView"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:background="#f9ff2c"
+                    android:layout_marginLeft="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PSI Hose 1"
+                    android:id="@+id/textView20"
+                    android:layout_weight="0"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="4dp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="2dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/resultTextView2"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="24sp"
+                    android:background="#f9ff2c"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PSI Hose 2"
+                    android:id="@+id/textView21"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="4dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_red_dark"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/resultTextView3"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:background="#f9ff2c"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PSI Hose 3"
+                    android:id="@+id/textView22"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="4dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_red_dark"/>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:background="#feffba"
             android:paddingTop="6dp"
-            android:paddingBottom="6dp">
+            android:paddingBottom="6dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/resultTextView"
+                android:id="@+id/resultTextView4"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="24sp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
+                android:textSize="30sp"
                 android:background="#f9ff2c"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="85dp"/>
+                android:layout_marginLeft="80dp"
+                android:gravity="center"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -156,7 +363,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            >
 
             <Button
                 android:layout_width="match_parent"
@@ -164,15 +371,8 @@
                 android:text="@string/calculate"
                 android:id="@+id/calculateButton"
                 android:background="#1313ff"
-                android:textColor="@android:color/white"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp">
+                android:textColor="@android:color/white"
+                android:layout_weight="1"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -180,7 +380,9 @@
                 android:text="@string/reset"
                 android:id="@+id/resetButton"
                 android:background="#1313ff"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dp"/>
 
         </LinearLayout>
 

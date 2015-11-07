@@ -8,8 +8,8 @@ android {
         applicationId "com.itstime2gohunting.frictionloss"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 5
-        versionName "2.1"
+        versionCode 6
+        versionName "3.0"
     }
     buildTypes {
         release {

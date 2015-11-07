@@ -18,6 +18,7 @@
         </activity>
         <activity
             android:name=".Settings"
+            android:label="@string/values_title"
             android:parentActivityName="com.itstime2gohunting.frictionloss.MainActivity"
             android:screenOrientation="portrait">
         <!-- The meta-data element is needed for versions lower than 4.1 -->
