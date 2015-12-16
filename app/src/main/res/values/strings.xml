@@ -43,6 +43,14 @@
 
     <string name="alert_button">OK</string>
 
+    <string name="gpm_title">GPM Calculator</string>
+
+    <string name="gpm_hint">GPM (Q)</string>
+
+    <string name="fl_formula">FL = CQ&#178;L</string>
+
+    <string name="gpm_formula">GPM = 29.7 d&#178;&#8730;NP</string>
+
     <string-array name="nozzle">
         <item>Nozzle</item>
         <item>1 &#190; Fog</item>

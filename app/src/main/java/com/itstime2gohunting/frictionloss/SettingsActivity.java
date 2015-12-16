@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Settings extends AppCompatActivity{
+public class SettingsActivity extends AppCompatActivity{
 
     Intent intent;
 
@@ -31,7 +31,7 @@ public class Settings extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings);
+        setContentView(R.layout.activity_settings);
 
         intent = getIntent();
 
@@ -70,7 +70,7 @@ public class Settings extends AppCompatActivity{
                 editor.putBoolean("userclicksave", false);
                 editor.apply();
 
-                Toast.makeText(Settings.this, "Settings Saved", Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, "Settings Saved", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -85,7 +85,7 @@ public class Settings extends AppCompatActivity{
                 editor.apply();
                 displayValues();
 
-                Toast.makeText(Settings.this, "Settings Cleared", Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, "Settings Cleared", Toast.LENGTH_LONG).show();
             }
         });
     }

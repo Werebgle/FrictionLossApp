@@ -2,8 +2,25 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context=".MainActivity">
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:orderInCategory="100"
-          app:showAsAction="never"/>
+
+    <!-- Add string resource for title-->
+    <item
+        android:id="@+id/gpm_calc"
+        android:icon="@drawable/ic_water_drop"
+        android:title="Test"
+        app:showAsAction="ifRoom"/>
+
+    <!-- Add string resource for title-->
+    <item
+        android:id="@+id/fl_calc"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:title="Test"
+        app:showAsAction="ifRoom"/>
+
+    <!--This is the 3 dot settings feature on the app bar-->
+    <!--<item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>-->
 </menu>

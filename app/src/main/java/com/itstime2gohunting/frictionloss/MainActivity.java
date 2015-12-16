@@ -13,11 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    Settings setting = new Settings();
+    SettingsActivity setting = new SettingsActivity();
 
     //hose 1 spinners
     private Spinner mSpinner;
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Calls Alert Dialog Fragment if User has not clicked Save Button in Settings.
+        //Calls Alert Dialog Fragment if User has not clicked Save Button in SettingsActivity.
         if (userInfoSet()){
             alertUser();
         }
@@ -436,13 +435,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+
+
+//        Old intent for settings page get rid of...
+        //int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent intent = new Intent(this, Settings.class);
+        /*if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
-            return true;
+            return true;*/
+        switch (item.getItemId()) {
+            case R.id.gpm_calc:
+                Intent gpmIntent = new Intent(this, GpmCalcActivity.class);
+                startActivity(gpmIntent);
+                return true;
+
+            case R.id.fl_calc:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+
         }
 
         return super.onOptionsItemSelected(item);
