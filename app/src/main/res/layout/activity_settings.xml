@@ -16,26 +16,6 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Set Friction Loss Coefficients"
-                    android:id="@+id/textView"
-                    android:gravity="center"
-                    android:textSize="25sp"
-                    android:background="#ff1719"
-                    android:textColor="@android:color/white"
-                    android:typeface="normal"
-                    android:textStyle="bold"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="10dp"
@@ -64,10 +44,11 @@
                     android:inputType="number"
                     android:layout_gravity="left|start"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:visibility="visible"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textIsSelectable="false"
+                    android:nextFocusDown="@+id/handSmoothTextView"/>
 
                 <EditText
                     android:id="@+id/handSmoothTextView"
@@ -76,16 +57,17 @@
                     android:inputType="number"
                     android:layout_gravity="end"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:nextFocusDown="@+id/fogTextView"
+                    android:visibility="visible"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="8dp">
 
                 <TextView
                     android:layout_width="175dp"
@@ -118,9 +100,9 @@
                     android:inputType="number"
                     android:layout_gravity="start"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:nextFocusDown="@+id/smoothTextView"/>
 
                 <EditText
                     android:id="@+id/smoothTextView"
@@ -129,16 +111,16 @@
                     android:inputType="number"
                     android:layout_gravity="end"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:nextFocusDown="@+id/blitzFogTextView"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="8dp">
 
 
                 <TextView
@@ -173,10 +155,10 @@
                     android:inputType="number"
                     android:layout_gravity="left|start"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:visibility="visible"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:nextFocusDown="@+id/blitzSmoothTextView"/>
 
                 <EditText
                     android:id="@+id/blitzSmoothTextView"
@@ -185,16 +167,16 @@
                     android:inputType="number"
                     android:layout_gravity="end"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:nextFocusDown="@+id/handlineTextView"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="8dp">
 
                 <TextView
                     android:layout_width="175dp"
@@ -227,9 +209,9 @@
                     android:inputType="number"
                     android:layout_gravity="start"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:nextFocusDown="@+id/handline2TextView"/>
 
                 <EditText
                     android:id="@+id/handline2TextView"
@@ -238,16 +220,16 @@
                     android:inputType="number"
                     android:layout_gravity="end"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:nextFocusDown="@+id/handline3TextView"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="8dp">
 
 
                 <TextView
@@ -281,10 +263,10 @@
                     android:inputType="number"
                     android:layout_gravity="start"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:nextFocusDown="@+id/applianceTextView"/>
 
                 <EditText
                     android:id="@+id/applianceTextView"
@@ -293,16 +275,16 @@
                     android:inputType="number"
                     android:layout_gravity="end"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:nextFocusDown="@+id/elevationTextView"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="8dp">
 
 
                 <TextView
@@ -336,7 +318,6 @@
                     android:inputType="number"
                     android:layout_gravity="start"
                     android:gravity="center_horizontal"
-                    android:text="0"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:typeface="normal"

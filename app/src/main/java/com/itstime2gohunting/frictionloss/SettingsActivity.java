@@ -36,26 +36,128 @@ public class SettingsActivity extends AppCompatActivity{
         intent = getIntent();
 
         mHandFogTextView = (EditText)findViewById(R.id.handFogTextView);
+        mHandFogTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mHandFogTextView){
+                    mHandFogTextView.getText().clear();
+                }
+            }
+        });
+
         mHandSmoothTextView = (EditText)findViewById(R.id.handSmoothTextView);
+        mHandSmoothTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mHandSmoothTextView){
+                    mHandSmoothTextView.getText().clear();
+                }
+            }
+        });
+
         mFogTextView = (EditText)findViewById(R.id.fogTextView);
+        mFogTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mFogTextView){
+                    mFogTextView.getText().clear();
+                }
+            }
+        });
+
         mSmoothTextView = (EditText)findViewById(R.id.smoothTextView);
+        mSmoothTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mSmoothTextView){
+                    mSmoothTextView.getText().clear();
+                }
+            }
+        });
+
         mBlitzFogTextView = (EditText)findViewById(R.id.blitzFogTextView);
+        mBlitzFogTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mBlitzFogTextView){
+                    mBlitzFogTextView.getText().clear();
+                }
+            }
+        });
+
         mBlitzSmoothTextView = (EditText)findViewById(R.id.blitzSmoothTextView);
+        mBlitzSmoothTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mBlitzSmoothTextView){
+                    mBlitzSmoothTextView.getText().clear();
+                }
+            }
+        });
+
         mHandlineTextView = (EditText)findViewById(R.id.handlineTextView);
+        mHandlineTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mHandlineTextView){
+                    mHandlineTextView.getText().clear();
+                }
+            }
+        });
+
         mHandline2TextView = (EditText)findViewById(R.id.handline2TextView);
+        mHandline2TextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mHandline2TextView){
+                    mHandline2TextView.getText().clear();
+                }
+            }
+        });
+
         mHandline3TextView = (EditText)findViewById(R.id.handline3TextView);
+        mHandline3TextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mHandline3TextView){
+                    mHandline3TextView.getText().clear();
+                }
+            }
+        });
+
         mAppliancesTextView = (EditText)findViewById(R.id.applianceTextView);
+        mAppliancesTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mAppliancesTextView){
+                    mAppliancesTextView.getText().clear();
+                }
+            }
+        });
+
         mElevationTextView = (EditText)findViewById(R.id.elevationTextView);
+        mElevationTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == mElevationTextView){
+                    mElevationTextView.getText().clear();
+                }
+            }
+        });
+
+        if(display()){
+            displayValues();
+        }
 
         saveButton = (Button)findViewById(R.id.saveButton);
-
-        displayValues();
-
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                checkEditText();
+
                 SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+
                 editor.putInt("handfog", Integer.parseInt(mHandFogTextView.getText().toString()));
                 editor.putInt("handsmooth", Integer.parseInt(mHandSmoothTextView.getText().toString()));
                 editor.putInt("fog", Integer.parseInt(mFogTextView.getText().toString()));
@@ -68,29 +170,36 @@ public class SettingsActivity extends AppCompatActivity{
                 editor.putInt("appliance", Integer.parseInt(mAppliancesTextView.getText().toString()));
                 editor.putInt("elevation", Integer.parseInt(mElevationTextView.getText().toString()));
                 editor.putBoolean("userclicksave", false);
+                editor.putBoolean("display", true);
                 editor.apply();
 
                 Toast.makeText(SettingsActivity.this, "Settings Saved", Toast.LENGTH_LONG).show();
+
+                displayValues();
             }
         });
 
         clearButton = (Button)findViewById(R.id.clearButton);
-
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.clear();
+                editor.putBoolean("display", false);
                 editor.apply();
-                displayValues();
 
                 Toast.makeText(SettingsActivity.this, "Settings Cleared", Toast.LENGTH_LONG).show();
+
+                resetValues();
             }
         });
+
     }
     public void displayValues() {
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+
         int info = sharedPreferences.getInt("handfog", 0);
         int info1 = sharedPreferences.getInt("handsmooth", 0);
         int info2 = sharedPreferences.getInt("fog", 0);
@@ -114,6 +223,62 @@ public class SettingsActivity extends AppCompatActivity{
         mHandline3TextView.setText(String.valueOf(info8));
         mAppliancesTextView.setText(String.valueOf(info9));
         mElevationTextView.setText(String.valueOf(info10));
+    }
+
+    public void checkEditText(){
+        if(mHandFogTextView.getText().toString().equals("")) {
+            mHandFogTextView.setText("0");
+        }
+        if(mHandSmoothTextView.getText().toString().equals("")) {
+            mHandSmoothTextView.setText("0");
+        }
+        if(mFogTextView.getText().toString().equals("")) {
+            mFogTextView.setText("0");
+        }
+        if(mSmoothTextView.getText().toString().equals("")) {
+            mSmoothTextView.setText("0");
+        }
+        if(mBlitzFogTextView.getText().toString().equals("")) {
+            mBlitzFogTextView.setText("0");
+        }
+        if(mBlitzSmoothTextView.getText().toString().equals("")) {
+            mBlitzSmoothTextView.setText("0");
+        }
+        if(mHandlineTextView.getText().toString().equals("")) {
+            mHandlineTextView.setText("0");
+        }
+        if(mHandline2TextView.getText().toString().equals("")) {
+            mHandline2TextView.setText("0");
+        }
+        if(mHandline3TextView.getText().toString().equals("")) {
+            mHandline3TextView.setText("0");
+        }
+        if(mAppliancesTextView.getText().toString().equals("")) {
+            mAppliancesTextView.setText("0");
+        }
+        if(mElevationTextView.getText().toString().equals("")) {
+            mElevationTextView.setText("0");
+        }
+    }
+
+    public void resetValues(){
+        mHandFogTextView.setText("");
+        mHandSmoothTextView.setText("");
+        mFogTextView.setText("");
+        mSmoothTextView.setText("");
+        mBlitzFogTextView.setText("");
+        mBlitzSmoothTextView.setText("");
+        mHandlineTextView.setText("");
+        mHandline2TextView.setText("");
+        mHandline3TextView.setText("");
+        mAppliancesTextView.setText("");
+        mElevationTextView.setText("");
+    }
+
+    public boolean display(){
+        SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+        boolean userclicksave = sharedPreferences.getBoolean("display", false);
+        return userclicksave;
     }
 }
 

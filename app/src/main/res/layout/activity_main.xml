@@ -16,25 +16,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Friction Loss Calculator"
-            android:id="@+id/textView17"
-            android:textColor="@android:color/black"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Hose Line 1"
             android:id="@+id/textView14"
             android:background="#7985ff"
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:paddingTop="5dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,7 +92,8 @@
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:paddingTop="5dp"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -170,7 +160,8 @@
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:paddingTop="5dp"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -233,7 +224,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:paddingTop="5dp">
 
             <LinearLayout
                 android:orientation="horizontal"

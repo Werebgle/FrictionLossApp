@@ -57,27 +57,27 @@
             android:inputType="number|numberDecimal"
             android:layout_weight="1"
             android:gravity="center"
-            />
+            android:nextFocusRight="@+id/gpmEditText"
+            android:nextFocusDown="@+id/gpmEditText"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/gpmEditText"
-
             android:inputType="number"
             android:layout_weight="1"
             android:gravity="center"
-            />
+            android:nextFocusRight="@+id/lengthEditText"
+            android:nextFocusDown="@+id/lengthEditText"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/lengthEditText"
-
             android:inputType="number"
             android:layout_weight="1"
             android:gravity="center"
-            />
+            android:nextFocusDown="@+id/diameterEditText"/>
 
     </LinearLayout>
 
@@ -138,7 +138,8 @@
         <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+            >
 
         <Button
             android:layout_width="wrap_content"
@@ -147,6 +148,7 @@
             android:id="@+id/flCalculateButton"
             android:layout_weight="1"
             android:gravity="center"/>
+
     </LinearLayout>
 
         <LinearLayout
@@ -191,13 +193,12 @@
             android:inputType="number|numberDecimal"
             android:layout_weight="1"
             android:gravity="center"
-            />
+            android:nextFocusDown="@+id/npEditText"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/npEditText"
-
             android:inputType="number"
             android:layout_weight="1"
             android:gravity="center"

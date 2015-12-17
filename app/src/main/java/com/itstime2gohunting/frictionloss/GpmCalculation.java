@@ -12,6 +12,11 @@ public class GpmCalculation {
     private double diameter;
     private double np;
 
+    private double nr;
+    private double y = 1.57;
+    private double dia;
+    private double NP;
+
 
     public void setCoefficient(double coefficient) {
         this.coefficient = coefficient;
@@ -41,5 +46,19 @@ public class GpmCalculation {
     public double getGpmResult() {
         gpmResult = x*(Math.pow(diameter, 2))*(Math.sqrt(np));
         return gpmResult;
+    }
+
+    //nozzle reaction section
+    public void setDia(double dia) {
+        this.dia = dia;
+    }
+
+    public void setNP(double NP) {
+        this.NP = NP;
+    }
+
+    public double getNr() {
+        nr = y*(Math.pow(dia, 2))*NP;
+        return nr;
     }
 }
