@@ -23,12 +23,17 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Set the Friction Loss for each of the listed items below. Hose Values are per 100 feet. Leave the Value 0 for items not used. Use the SAVE button to save. Use the CLEAR button to reset the values to 0."
+                    android:text="Set the Friction Loss for each of the listed items below. Hose Values are per 100 feet. Leave the Value 0 or empty for items not used. Use the SAVE button to save the values. Use the CLEAR button to reset the values. All values are PSI."
                     android:id="@+id/textView11"
                     android:textSize="15sp"
-                    android:gravity="center"/>
+                    android:gravity="left|center"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:minLines="6"
+                    />
             </LinearLayout>
 
             <LinearLayout

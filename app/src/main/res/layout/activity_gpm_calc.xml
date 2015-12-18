@@ -273,6 +273,114 @@
             android:gravity="center"/>
     </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Nozzle Reaction Formula"
+                android:id="@+id/textView"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="25sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/nr_formula"
+                android:id="@+id/textView17"
+                android:gravity="center"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/nozzleDiameterEditText"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number|numberDecimal"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/nozzlePressureEditText"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Nozzle Diameter (D)"
+                android:id="@+id/textView31"
+                android:layout_weight="1"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Nozzle Pressure (NP)"
+                android:id="@+id/textView33"
+                android:layout_weight="1"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/NrTextView"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="  lbs. NR"
+                android:id="@+id/textView35"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CALCULATE NR"
+                android:id="@+id/nrCalculateButton"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

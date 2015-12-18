@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,112 +37,123 @@ public class SettingsActivity extends AppCompatActivity{
         intent = getIntent();
 
         mHandFogTextView = (EditText)findViewById(R.id.handFogTextView);
-        mHandFogTextView.setOnClickListener(new View.OnClickListener() {
+        mHandFogTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onTouch(View v, MotionEvent event) {
                 if(v == mHandFogTextView){
                     mHandFogTextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mHandSmoothTextView = (EditText)findViewById(R.id.handSmoothTextView);
-        mHandSmoothTextView.setOnClickListener(new View.OnClickListener() {
+        mHandSmoothTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mHandSmoothTextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mHandSmoothTextView) {
                     mHandSmoothTextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mFogTextView = (EditText)findViewById(R.id.fogTextView);
-        mFogTextView.setOnClickListener(new View.OnClickListener() {
+        mFogTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mFogTextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mFogTextView) {
                     mFogTextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mSmoothTextView = (EditText)findViewById(R.id.smoothTextView);
-        mSmoothTextView.setOnClickListener(new View.OnClickListener() {
+        mSmoothTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mSmoothTextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mSmoothTextView) {
                     mSmoothTextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mBlitzFogTextView = (EditText)findViewById(R.id.blitzFogTextView);
-        mBlitzFogTextView.setOnClickListener(new View.OnClickListener() {
+        mBlitzFogTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mBlitzFogTextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mBlitzFogTextView) {
                     mBlitzFogTextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mBlitzSmoothTextView = (EditText)findViewById(R.id.blitzSmoothTextView);
-        mBlitzSmoothTextView.setOnClickListener(new View.OnClickListener() {
+        mBlitzSmoothTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mBlitzSmoothTextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mBlitzSmoothTextView) {
                     mBlitzSmoothTextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mHandlineTextView = (EditText)findViewById(R.id.handlineTextView);
-        mHandlineTextView.setOnClickListener(new View.OnClickListener() {
+        mHandlineTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mHandlineTextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mHandlineTextView) {
                     mHandlineTextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mHandline2TextView = (EditText)findViewById(R.id.handline2TextView);
-        mHandline2TextView.setOnClickListener(new View.OnClickListener() {
+        mHandline2TextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mHandline2TextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mHandline2TextView) {
                     mHandline2TextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mHandline3TextView = (EditText)findViewById(R.id.handline3TextView);
-        mHandline3TextView.setOnClickListener(new View.OnClickListener() {
+        mHandline3TextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mHandline3TextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mHandline3TextView) {
                     mHandline3TextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mAppliancesTextView = (EditText)findViewById(R.id.applianceTextView);
-        mAppliancesTextView.setOnClickListener(new View.OnClickListener() {
+        mAppliancesTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mAppliancesTextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mAppliancesTextView) {
                     mAppliancesTextView.getText().clear();
                 }
+                return false;
             }
         });
 
         mElevationTextView = (EditText)findViewById(R.id.elevationTextView);
-        mElevationTextView.setOnClickListener(new View.OnClickListener() {
+        mElevationTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                if(v == mElevationTextView){
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v == mElevationTextView) {
                     mElevationTextView.getText().clear();
                 }
+                return false;
             }
         });
 

@@ -43,13 +43,15 @@
 
     <string name="alert_button">OK</string>
 
-    <string name="gpm_title">GPM Calculator</string>
+    <string name="gpm_title">Other Calculators</string>
 
     <string name="gpm_hint">GPM (Q)</string>
 
     <string name="fl_formula">FL = CQ&#178;L</string>
 
     <string name="gpm_formula">GPM = 29.7 d&#178;&#8730;NP</string>
+
+    <string name="nr_formula">NR = 1.57 D&#178;NP</string>
 
     <string-array name="nozzle">
         <item>Nozzle</item>

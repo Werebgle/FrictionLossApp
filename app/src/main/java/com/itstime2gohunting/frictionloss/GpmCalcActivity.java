@@ -23,6 +23,11 @@ public class GpmCalcActivity extends AppCompatActivity {
     private EditText mNpEditText;
     private Button mGpmCalculateButton;
 
+    private TextView mNrTextView;
+    private EditText mDiaEditText;
+    private EditText mNozzlePressureEditText;
+    private Button mNrCalculateButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,11 @@ public class GpmCalcActivity extends AppCompatActivity {
         mDiameterEditText = (EditText) findViewById(R.id.diameterEditText);
         mNpEditText = (EditText) findViewById(R.id.npEditText);
         mGpmCalculateButton = (Button) findViewById(R.id.gpmCalculateButton);
+
+        mNrTextView = (TextView) findViewById(R.id.NrTextView);
+        mDiaEditText = (EditText) findViewById(R.id.nozzleDiameterEditText);
+        mNozzlePressureEditText = (EditText) findViewById(R.id.nozzlePressureEditText);
+        mNrCalculateButton = (Button) findViewById(R.id.nrCalculateButton);
 
         mCalculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +118,36 @@ public class GpmCalcActivity extends AppCompatActivity {
 
                 long gpm = Math.round(mGpmCalculation.getGpmResult()*10)/10;
                 mGpmTextView.setText(String.valueOf(gpm));
+            }
+        });
+
+        mNrCalculateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GpmCalculation gpmCalculation = new GpmCalculation();
+
+                String diameterString = mDiaEditText.getText().toString();
+                if (diameterString.equals("")){
+                    Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Diameter value", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                else {
+                    double diameter = Double.parseDouble(mDiaEditText.getText().toString());
+                    gpmCalculation.setDia(diameter);
+                }
+
+                String nozzlePressureString = mNozzlePressureEditText.getText().toString();
+                if (nozzlePressureString.equals("")){
+                    Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Nozzle Pressure value", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                else {
+                    double nozzlePressure = Double.parseDouble(mNozzlePressureEditText.getText().toString());
+                    gpmCalculation.setNP(nozzlePressure);
+                }
+
+                long nr = Math.round(gpmCalculation.getNr()*10)/10;
+                mNrTextView.setText(String.valueOf(nr));
             }
         });
 
