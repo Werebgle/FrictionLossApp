@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:id="@+id/scrollView1"
     tools:context=".GpmCalcActivity"
     android:background="@android:color/background_light"
@@ -17,38 +17,46 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#7985ff">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Friction Loss Formula"
-                android:id="@+id/textView18"
+                android:text="@string/friction_loss_formula_title"
+                android:id="@+id/frictionLossTitleTextView"
                 android:gravity="center"
-                android:textSize="25sp"
-                android:layout_weight="1"/>
+                android:textSize="22sp"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#7985ff">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView19"
+                android:id="@+id/frictionLossFormulaTextView"
                 android:layout_weight="1"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:gravity="center"
-                android:text="@string/fl_formula"/>
+                android:text="@string/fl_formula"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#7985ff">
 
         <EditText
             android:layout_width="match_parent"
@@ -58,7 +66,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:nextFocusRight="@+id/gpmEditText"
-            android:nextFocusDown="@+id/gpmEditText"/>
+            android:nextFocusDown="@+id/gpmEditText"
+            android:textColor="@android:color/black"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -68,7 +77,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:nextFocusRight="@+id/lengthEditText"
-            android:nextFocusDown="@+id/lengthEditText"/>
+            android:nextFocusDown="@+id/lengthEditText"
+            android:textColor="@android:color/black"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -77,44 +87,53 @@
             android:inputType="number"
             android:layout_weight="1"
             android:gravity="center"
-            android:nextFocusDown="@+id/diameterEditText"/>
+            android:nextFocusDown="@+id/diameterEditText"
+            android:textColor="@android:color/black"/>
 
     </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            android:background="#7985ff">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Coefficient (C)"
-                android:id="@+id/textView25"
+                android:text="@string/coefficient_label"
+                android:id="@+id/coefficientTextView"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@android:color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="GPM (Q)"
-                android:id="@+id/textView26"
+                android:text="@string/gpm_label"
+                android:id="@+id/GpmTextView"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@android:color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Hose Length (L)"
-                android:id="@+id/textView27"
+                android:text="@string/hose_length_label"
+                android:id="@+id/hoseLengthTextView"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#7985ff">
 
             <TextView
                 android:layout_width="match_parent"
@@ -123,68 +142,60 @@
 
                 android:textSize="22sp"
                 android:layout_weight="1"
-                android:gravity="right"/>
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/fl_calc_button_label"
+                android:id="@+id/flCalculateButton"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="  PSI"
-                android:id="@+id/textView28"
+                android:layout_height="wrap_content"
+                android:text="@string/gpm_formula_label"
+                android:id="@+id/gpmTitleTextView"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:textSize="22sp"/>
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gpmFormulaTextView"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@string/gpm_formula"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
             >
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Calculate FL"
-            android:id="@+id/flCalculateButton"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-    </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="GPM Formula"
-                android:id="@+id/textView23"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="25sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/textView24"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="22sp"
-                android:text="@string/gpm_formula"/>
-        </LinearLayout>
-
-        <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <EditText
             android:layout_width="match_parent"
@@ -193,7 +204,8 @@
             android:inputType="number|numberDecimal"
             android:layout_weight="1"
             android:gravity="center"
-            android:nextFocusDown="@+id/npEditText"/>
+            android:nextFocusDown="@+id/npEditText"
+            android:textColor="@android:color/black"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -202,35 +214,41 @@
             android:inputType="number"
             android:layout_weight="1"
             android:gravity="center"
-            />
+            android:nextFocusDown="@+id/nozzleDiameterEditText"
+            android:textColor="@android:color/black"/>
     </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="5dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Nozzle Diameter (d)"
-                android:id="@+id/textView29"
+                android:text="@string/nozzle_diameter_label"
+                android:id="@+id/nozzleDiameterTextView"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@android:color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Nozzle Pressure (NP)"
-                android:id="@+id/textView30"
+                android:text="@string/nozzle_pressure_label"
+                android:id="@+id/nozzlePressureTextView"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="match_parent"
@@ -239,73 +257,63 @@
 
                 android:textSize="22sp"
                 android:layout_weight="1"
-                android:gravity="right"
-                />
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:textStyle="bold"/>
 
-            <TextView
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="  GPM"
-                android:id="@+id/textView32"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:textSize="22sp"/>
+                android:text="@string/gpm_calculation_button_label"
+                android:id="@+id/gpmCalculateButton"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@android:color/black"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </LinearLayout>
-
-        <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calculate GPM"
-            android:id="@+id/gpmCalculateButton"
             android:layout_weight="1"
-            android:gravity="center"/>
-    </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:background="#ff2f2b">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Nozzle Reaction Formula"
-                android:id="@+id/textView"
+                android:layout_height="wrap_content"
+                android:text="@string/nozzle_reaction_label"
+                android:id="@+id/nozzleReactionTitleTextView"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="25sp"/>
+                android:textSize="22sp"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#ff2f2b">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/nr_formula"
-                android:id="@+id/textView17"
+                android:id="@+id/nozzleReactionFormulaTextView"
                 android:gravity="center"
-                android:textSize="22sp"/>
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#ff2f2b"
+            >
 
             <EditText
                 android:layout_width="match_parent"
@@ -313,7 +321,9 @@
                 android:id="@+id/nozzleDiameterEditText"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:inputType="number|numberDecimal"/>
+                android:inputType="number|numberDecimal"
+                android:nextFocusDown="@+id/nozzlePressureEditText"
+                android:textColor="@android:color/black"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -321,64 +331,61 @@
                 android:id="@+id/nozzlePressureEditText"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            android:background="#ff2f2b">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Nozzle Diameter (D)"
-                android:id="@+id/textView31"
+                android:text="@string/nozzle_diam_label"
+                android:id="@+id/nozzDiameterTextView"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@android:color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Nozzle Pressure (NP)"
-                android:id="@+id/textView33"
+                android:text="@string/noz_press_label"
+                android:id="@+id/nozzPressTextView"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#ff2f2b">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/NrTextView"
-                android:gravity="right"
                 android:layout_weight="1"
-                android:textSize="22sp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="  lbs. NR"
-                android:id="@+id/textView35"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:textSize="22sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                android:textSize="22sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:textStyle="bold"/>
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="CALCULATE NR"
-                android:id="@+id/nrCalculateButton"/>
+                android:layout_height="match_parent"
+                android:text="@string/nr_calculation_button_label"
+                android:id="@+id/nrCalculateButton"
+                android:layout_weight="2"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
     </LinearLayout>

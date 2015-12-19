@@ -1,57 +1,55 @@
 <resources>
     <string name="app_name">Friction Loss Calculator</string>
-
     <string name="values_title">Friction Loss Values</string>
-
     <string name="action_settings">FL Values</string>
-
-    <string name="wfdTitleTextView">Fire Department Friction Loss Calculator</string>
-
+    <!--<string name="wfdTitleTextView">Fire Department Friction Loss Calculator</string>-->
     <string name="psiAtThePump">PSI AT THE PUMP</string>
-
     <string name="calculate">CALCULATE</string>
-
     <string name="reset">RESET</string>
-
-    <string name="wfdContentDescription">Worthington Fire Logo</string>
-
+    <!--<string name="wfdContentDescription">Worthington Fire Logo</string>-->
     <string name="settingsnozzle1">1 &#190; Fog Nozzle</string>
-
     <string name="settingsnozzle2">1 &#190; Smooth Nozzle</string>
-
     <string name="settingsnozzle3">2 &#189; Fog Nozzle</string>
-
     <string name="settingsnozzle4">2 &#189; Smooth Nozzle</string>
-
     <string name="blitzfog">Blitz Fog</string>
-
     <string name="blitzsmooth">Blitz Smooth</string>
-
     <string name="settings1handline">1 &#190;" Hose</string>
-
     <string name="settings2handline">2 &#189;" Hose</string>
-
     <string name="settings3handline">3" Inch Hose</string>
-
     <string name="settingsappliances">Appliances</string>
-
     <string name="settingselevation">Elevation</string>
-
     <string name="alert_dialog">Remember To Set Your Friction Loss Values In The Settings Page!</string>
-
     <string name="alert_title">For Educational Purposes Only</string>
-
     <string name="alert_button">OK</string>
-
     <string name="gpm_title">Other Calculators</string>
-
     <string name="gpm_hint">GPM (Q)</string>
-
     <string name="fl_formula">FL = CQ&#178;L</string>
-
     <string name="gpm_formula">GPM = 29.7 d&#178;&#8730;NP</string>
-
     <string name="nr_formula">NR = 1.57 D&#178;NP</string>
+    <string name="water_drop_icon">Test</string>
+    <string name="settings_icon">Test</string>
+    <string name="settings_page_instructions">Set the Friction Loss for each of the listed items below. Hose Values are per 100 feet. Leave the Value 0 or empty for items not used. Use the SAVE button to save the values. Use the CLEAR button to reset the values. All values are PSI.</string>
+    <string name="save_button_settings_page">Save</string>
+    <string name="clear_button_settings_page">Clear</string>
+    <string name="hose_1_label">Hose Line 1</string>
+    <string name="hose_2_label">Hose Line 2</string>
+    <string name="hose_3_label">Hose Line 3</string>
+    <string name="psi_hose_1_label">PSI Hose 1</string>
+    <string name="psi_hose_2_label">PSI Hose 2</string>
+    <string name="psi_hose_3_label">PSI Hose 3</string>
+    <string name="friction_loss_formula_title">Friction Loss Formula</string>
+    <string name="coefficient_label">Coefficient (C)</string>
+    <string name="gpm_label">GPM (Q)</string>
+    <string name="hose_length_label">Hose Length (L\')</string>
+    <string name="fl_calc_button_label">Calc FL</string>
+    <string name="gpm_formula_label">GPM Formula</string>
+    <string name="nozzle_diameter_label">Nozzle Diameter (d\")</string>
+    <string name="nozzle_pressure_label">Nozzle Pressure (NP)</string>
+    <string name="gpm_calculation_button_label">Calc GPM</string>
+    <string name="nozzle_reaction_label">Nozzle Reaction Formula</string>
+    <string name="nozzle_diam_label">Nozzle Diameter (D\")</string>
+    <string name="noz_press_label">Nozzle Pressure (NP)</string>
+    <string name="nr_calculation_button_label">CALC NR</string>
 
     <string-array name="nozzle">
         <item>Nozzle</item>

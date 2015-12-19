@@ -16,17 +16,14 @@ public class GpmCalcActivity extends AppCompatActivity {
     private EditText mCoeffEditText;
     private EditText mGpmEditText;
     private EditText mLengthEditText;
-    private Button mCalculateButton;
 
     private TextView mGpmTextView;
     private EditText mDiameterEditText;
     private EditText mNpEditText;
-    private Button mGpmCalculateButton;
 
     private TextView mNrTextView;
     private EditText mDiaEditText;
     private EditText mNozzlePressureEditText;
-    private Button mNrCalculateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,118 +35,116 @@ public class GpmCalcActivity extends AppCompatActivity {
         mCoeffEditText = (EditText) findViewById(R.id.coeffEditText);
         mGpmEditText = (EditText) findViewById(R.id.gpmEditText);
         mLengthEditText = (EditText) findViewById(R.id.lengthEditText);
-        mCalculateButton = (Button) findViewById(R.id.flCalculateButton);
+        Button CalculateButton = (Button) findViewById(R.id.flCalculateButton);
 
         mGpmTextView = (TextView) findViewById(R.id.gpmTextView);
         mDiameterEditText = (EditText) findViewById(R.id.diameterEditText);
         mNpEditText = (EditText) findViewById(R.id.npEditText);
-        mGpmCalculateButton = (Button) findViewById(R.id.gpmCalculateButton);
+        Button GpmCalculateButton = (Button) findViewById(R.id.gpmCalculateButton);
 
         mNrTextView = (TextView) findViewById(R.id.NrTextView);
         mDiaEditText = (EditText) findViewById(R.id.nozzleDiameterEditText);
         mNozzlePressureEditText = (EditText) findViewById(R.id.nozzlePressureEditText);
-        mNrCalculateButton = (Button) findViewById(R.id.nrCalculateButton);
+        Button NrCalculateButton = (Button) findViewById(R.id.nrCalculateButton);
 
-        mCalculateButton.setOnClickListener(new View.OnClickListener() {
+        CalculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GpmCalculation mGpmCalculation = new GpmCalculation();
 
                 String coeffString = mCoeffEditText.getText().toString();
-                if (coeffString.equals("")){
+                if (coeffString.equals("")) {
                     Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Coefficient value", Toast.LENGTH_LONG);
                     toast.show();
-                }
-                else {
+                } else {
                     double coeff = Double.parseDouble(mCoeffEditText.getText().toString());
                     mGpmCalculation.setCoefficient(coeff);
                 }
 
                 String gpmString = mCoeffEditText.getText().toString();
-                if (gpmString.equals("")){
+                if (gpmString.equals("")) {
                     Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter GPM value", Toast.LENGTH_LONG);
                     toast.show();
-                }
-                else {
+                } else {
                     double gpm = Double.parseDouble(mGpmEditText.getText().toString());
                     mGpmCalculation.setGpm(gpm);
                 }
 
                 String lengthString = mLengthEditText.getText().toString();
-                if (lengthString.equals("")){
-                    Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Length value", Toast.LENGTH_LONG);
+                if (lengthString.equals("")) {
+                    Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Hose Length value", Toast.LENGTH_LONG);
                     toast.show();
-                }
-                else {
+                } else {
                     double length = Double.parseDouble(mLengthEditText.getText().toString());
                     mGpmCalculation.setLength(length);
                 }
 
-                long fl = Math.round(mGpmCalculation.getFrictionLoss()*10)/10;
-                mFlTextView.setText(String.valueOf(fl));
+                long fl = Math.round(mGpmCalculation.getFrictionLoss() * 10) / 10;
+                mFlTextView.setText("FL = " + String.valueOf(fl) + " PSI");
             }
         });
 
-        mGpmCalculateButton.setOnClickListener(new View.OnClickListener() {
+        GpmCalculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GpmCalculation mGpmCalculation = new GpmCalculation();
 
                 String diameterString = mDiameterEditText.getText().toString();
-                if (diameterString.equals("")){
-                    Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Diameter value", Toast.LENGTH_LONG);
+                if (diameterString.equals("")) {
+                    Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Nozzle Diameter value", Toast.LENGTH_LONG);
                     toast.show();
-                }
-                else {
+                } else {
                     double diameter = Double.parseDouble(mDiameterEditText.getText().toString());
                     mGpmCalculation.setDiameter(diameter);
                 }
 
                 String npString = mDiameterEditText.getText().toString();
-                if (npString.equals("")){
+                if (npString.equals("")) {
                     Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Nozzle Pressure value", Toast.LENGTH_LONG);
                     toast.show();
-                }
-                else {
+                } else {
                     double np = Double.parseDouble(mNpEditText.getText().toString());
                     mGpmCalculation.setNp(np);
                 }
 
 
-                long gpm = Math.round(mGpmCalculation.getGpmResult()*10)/10;
-                mGpmTextView.setText(String.valueOf(gpm));
+                long gpm = Math.round(mGpmCalculation.getGpmResult() * 10) / 10;
+                mGpmTextView.setText("GPM = " + String.valueOf(gpm));
             }
         });
 
-        mNrCalculateButton.setOnClickListener(new View.OnClickListener() {
+        NrCalculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GpmCalculation gpmCalculation = new GpmCalculation();
 
                 String diameterString = mDiaEditText.getText().toString();
-                if (diameterString.equals("")){
-                    Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Diameter value", Toast.LENGTH_LONG);
+                if (diameterString.equals("")) {
+                    Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Nozzle Diameter value", Toast.LENGTH_LONG);
                     toast.show();
-                }
-                else {
+                } else {
                     double diameter = Double.parseDouble(mDiaEditText.getText().toString());
                     gpmCalculation.setDia(diameter);
                 }
 
                 String nozzlePressureString = mNozzlePressureEditText.getText().toString();
-                if (nozzlePressureString.equals("")){
+                if (nozzlePressureString.equals("")) {
                     Toast toast = Toast.makeText(GpmCalcActivity.this, "Please enter Nozzle Pressure value", Toast.LENGTH_LONG);
                     toast.show();
-                }
-                else {
+                } else {
                     double nozzlePressure = Double.parseDouble(mNozzlePressureEditText.getText().toString());
                     gpmCalculation.setNP(nozzlePressure);
                 }
 
-                long nr = Math.round(gpmCalculation.getNr()*10)/10;
-                mNrTextView.setText(String.valueOf(nr));
+                long nr = Math.round(gpmCalculation.getNr() * 10) / 10;
+                mNrTextView.setText("NR = " + String.valueOf(nr) + " lbs");
             }
         });
 
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 }

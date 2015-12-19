@@ -27,9 +27,6 @@ public class SettingsActivity extends AppCompatActivity{
     private EditText mAppliancesTextView;
     private EditText mElevationTextView;
 
-    private Button saveButton;
-    private Button clearButton;
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
@@ -161,7 +158,7 @@ public class SettingsActivity extends AppCompatActivity{
             displayValues();
         }
 
-        saveButton = (Button)findViewById(R.id.saveButton);
+        Button saveButton = (Button)findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -191,7 +188,7 @@ public class SettingsActivity extends AppCompatActivity{
             }
         });
 
-        clearButton = (Button)findViewById(R.id.clearButton);
+        Button clearButton = (Button)findViewById(R.id.clearButton);
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -289,8 +286,13 @@ public class SettingsActivity extends AppCompatActivity{
 
     public boolean display(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        boolean userclicksave = sharedPreferences.getBoolean("display", false);
-        return userclicksave;
+        return sharedPreferences.getBoolean("display", false);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 }
 

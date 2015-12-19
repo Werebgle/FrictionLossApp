@@ -16,8 +16,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    SettingsActivity setting = new SettingsActivity();
-
     //hose 1 spinners
     private Spinner mSpinner;
     private Spinner mSpinner1;
@@ -39,15 +37,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Spinner mSpinner15;
     private Spinner mSpinner16;
     private Spinner mSpinner17;
-
-    //hose 1 result() calculation
-    private int mValue = 0;
-
-    //hose 2 result() calculation
-    private int mValue2 = 0;
-
-    //hose 3 result() calculation
-    private int mValue3 = 0;
 
     //hose 1 spinner value user selected
     private Long mItem;
@@ -71,34 +60,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Long mItem16;
     private Long mItem17;
 
-    //initial friction loss values hose 1
-    private int mFLoss = 0;
-    private int mFLoss1 = 0;
-    private int mFLoss2 = 0;
-    private int mFLoss3 = 0;
-    private int mFLoss4 = 0;
-    private int mFLoss5 = 0;
-    //initial friction loss values hose 2
-    private int mFLoss6 = 0;
-    private int mFLoss7 = 0;
-    private int mFLoss8 = 0;
-    private int mFLoss9 = 0;
-    private int mFLoss10 = 0;
-    private int mFLoss11 = 0;
-    //initial friction loss values hose 3
-    private int mFLoss12 = 0;
-    private int mFLoss13 = 0;
-    private int mFLoss14 = 0;
-    private int mFLoss15 = 0;
-    private int mFLoss16 = 0;
-    private int mFLoss17 = 0;
-
-    private Button mButton;
-    private Button mResetButton;
     private TextView resultTextView;
     private TextView resultTextView2;
     private TextView resultTextView3;
     private TextView resultTextView4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -192,28 +158,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mSpinner16.setOnItemSelectedListener(this);
         mSpinner17.setOnItemSelectedListener(this);
 
-        //need to set up if statement to calculate greatest value of results for resultTextView
-        mButton = (Button)findViewById(R.id.calculateButton);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        Button calculateButton = (Button)findViewById(R.id.calculateButton);
+        calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultTextView.setText(String.valueOf(result()));
                 resultTextView2.setText(String.valueOf(result2()));
                 resultTextView3.setText(String.valueOf(result3()));
-                if ((result() > result2()) && (result() > result3())){
+                if ((result() > result2()) && (result() > result3())) {
                     resultTextView4.setText(String.valueOf(result()));
-                }
-                else if((result2() > result()) && (result2() > result3())){
+                } else if ((result2() > result()) && (result2() > result3())) {
                     resultTextView4.setText(String.valueOf(result2()));
-                }
-                else {
+                } else {
                     resultTextView4.setText(String.valueOf(result3()));
                 }
             }
         });
 
-        mResetButton = (Button)findViewById(R.id.resetButton);
-        mResetButton.setOnClickListener(new View.OnClickListener() {
+        Button resetButton = (Button)findViewById(R.id.resetButton);
+        resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();
@@ -231,8 +194,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     //Method that determines if User clicked Save Button
     public boolean userInfoSet(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        boolean userclicksave = sharedPreferences.getBoolean("userclicksave", true);
-        return userclicksave;
+        return sharedPreferences.getBoolean("userclicksave", true);
     }
 
     //Dialog Fragment method
@@ -269,58 +231,47 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     //retrieve user friction loss values from shared preferences set to methods used below
     public int resultHandFog(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info = sharedPreferences.getInt("handfog", 0);
-        return info;
+        return sharedPreferences.getInt("handfog", 0);
     }
     public int resultHandSmooth(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info1 = sharedPreferences.getInt("handsmooth", 0);
-        return info1;
+        return sharedPreferences.getInt("handsmooth", 0);
     }
     public int resultFog(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info2 = sharedPreferences.getInt("fog", 0);
-        return info2;
+        return sharedPreferences.getInt("fog", 0);
     }
     public int resultSmooth(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info3 = sharedPreferences.getInt("smooth", 0);
-        return info3;
+        return sharedPreferences.getInt("smooth", 0);
     }
     public int resultBlitzFog(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info4 = sharedPreferences.getInt("blitzfog", 0);
-        return info4;
+        return sharedPreferences.getInt("blitzfog", 0);
     }
     public int resultBlitzSmooth(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info5 = sharedPreferences.getInt("blitzsmooth", 0);
-        return info5;
+        return sharedPreferences.getInt("blitzsmooth", 0);
     }
     public int resultHandline(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info6 = sharedPreferences.getInt("handline", 0);
-        return info6;
+        return sharedPreferences.getInt("handline", 0);
     }
     public int resultHandline2(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info7 = sharedPreferences.getInt("handline2", 0);
-        return info7;
+        return sharedPreferences.getInt("handline2", 0);
     }
     public int resultHandline3(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info8 = sharedPreferences.getInt("handline3", 0);
-        return info8;
+        return sharedPreferences.getInt("handline3", 0);
     }
     public int resultAppliance(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info9 = sharedPreferences.getInt("appliance", 0);
-        return info9;
+        return sharedPreferences.getInt("appliance", 0);
     }
     public int resultElevation(){
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        int info10 = sharedPreferences.getInt("elevation", 0);
-        return info10;
+        return sharedPreferences.getInt("elevation", 0);
     }
 
     //hose 1 calculation method
@@ -332,7 +283,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int n5 = resultBlitzFog();
         int n6 = resultBlitzSmooth();
         int [] fLossArray = {0, n1, n2, n3, n4, n5, n6};
-        mFLoss = fLossArray[mItem.intValue()];
+        int mFLoss = fLossArray[mItem.intValue()];
 
         int hl = resultHandline();
         int h2 = resultHandline2();
@@ -343,17 +294,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int [] fLossArray2 = {0,0,1,2,3,4,5,6,7,8,9};
 
         int mmFLoss1 = fLossArray1[mItem1.intValue()];
-        mFLoss1 = hl * mmFLoss1;
+        int mFLoss1 = hl * mmFLoss1;
         int mmFLoss2 = fLossArray1[mItem2.intValue()];
-        mFLoss2 = h2 * mmFLoss2;
+        int mFLoss2 = h2 * mmFLoss2;
         int mmFLoss3 = fLossArray1[mItem3.intValue()];
-        mFLoss3 = h3 * mmFLoss3;
+        int mFLoss3 = h3 * mmFLoss3;
         int mmFLoss4 = fLossArray1[mItem4.intValue()];
-        mFLoss4 = app * mmFLoss4;
+        int mFLoss4 = app * mmFLoss4;
         int mmFLoss5 = fLossArray2[mItem5.intValue()];
-        mFLoss5 = elev * mmFLoss5;
-        mValue = (mFLoss + mFLoss1 + mFLoss2 + mFLoss3 + mFLoss4 + mFLoss5);
-        return mValue;
+        int mFLoss5 = elev * mmFLoss5;
+        return (mFLoss + mFLoss1 + mFLoss2 + mFLoss3 + mFLoss4 + mFLoss5);
     }
     //hose 2 calculation method
     public int result2(){
@@ -364,7 +314,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int n5 = resultBlitzFog();
         int n6 = resultBlitzSmooth();
         int [] fLossArray = {0, n1, n2, n3, n4, n5, n6};
-        mFLoss6 = fLossArray[mItem6.intValue()];
+        int mFLoss6 = fLossArray[mItem6.intValue()];
 
         int hl = resultHandline();
         int h2 = resultHandline2();
@@ -375,17 +325,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int [] fLossArray2 = {0,0,1,2,3,4,5,6,7,8,9};
 
         int mmFLoss1 = fLossArray1[mItem7.intValue()];
-        mFLoss7 = hl * mmFLoss1;
+        int mFLoss7 = hl * mmFLoss1;
         int mmFLoss2 = fLossArray1[mItem8.intValue()];
-        mFLoss8 = h2 * mmFLoss2;
+        int mFLoss8 = h2 * mmFLoss2;
         int mmFLoss3 = fLossArray1[mItem9.intValue()];
-        mFLoss9 = h3 * mmFLoss3;
+        int mFLoss9 = h3 * mmFLoss3;
         int mmFLoss4 = fLossArray1[mItem10.intValue()];
-        mFLoss10 = app * mmFLoss4;
+        int mFLoss10 = app * mmFLoss4;
         int mmFLoss5 = fLossArray2[mItem11.intValue()];
-        mFLoss11 = elev * mmFLoss5;
-        mValue2 = (mFLoss6 + mFLoss7 + mFLoss8 + mFLoss9 + mFLoss10 + mFLoss11);
-        return mValue2;
+        int mFLoss11 = elev * mmFLoss5;
+        return (mFLoss6 + mFLoss7 + mFLoss8 + mFLoss9 + mFLoss10 + mFLoss11);
     }
     //hose 3 calculation method
     public int result3(){
@@ -396,7 +345,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int n5 = resultBlitzFog();
         int n6 = resultBlitzSmooth();
         int [] fLossArray = {0, n1, n2, n3, n4, n5, n6};
-        mFLoss12 = fLossArray[mItem12.intValue()];
+        int mFLoss12 = fLossArray[mItem12.intValue()];
 
         int hl = resultHandline();
         int h2 = resultHandline2();
@@ -407,17 +356,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int [] fLossArray2 = {0,0,1,2,3,4,5,6,7,8,9};
 
         int mmFLoss1 = fLossArray1[mItem13.intValue()];
-        mFLoss13 = hl * mmFLoss1;
+        int mFLoss13 = hl * mmFLoss1;
         int mmFLoss2 = fLossArray1[mItem14.intValue()];
-        mFLoss14 = h2 * mmFLoss2;
+        int mFLoss14 = h2 * mmFLoss2;
         int mmFLoss3 = fLossArray1[mItem15.intValue()];
-        mFLoss15 = h3 * mmFLoss3;
+        int mFLoss15 = h3 * mmFLoss3;
         int mmFLoss4 = fLossArray1[mItem16.intValue()];
-        mFLoss16 = app * mmFLoss4;
+        int mFLoss16 = app * mmFLoss4;
         int mmFLoss5 = fLossArray2[mItem17.intValue()];
-        mFLoss17 = elev * mmFLoss5;
-        mValue3 = (mFLoss12 + mFLoss13 + mFLoss14 + mFLoss15 + mFLoss16 + mFLoss17);
-        return mValue3;
+        int mFLoss17 = elev * mmFLoss5;
+        return (mFLoss12 + mFLoss13 + mFLoss14 + mFLoss15 + mFLoss16 + mFLoss17);
     }
 
     @Override
@@ -432,19 +380,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
-
-//        Old intent for settings page get rid of...
-        //int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        /*if (id == R.id.action_settings) {
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-            return true;*/
         switch (item.getItemId()) {
             case R.id.gpm_calc:
                 Intent gpmIntent = new Intent(this, GpmCalcActivity.class);
@@ -455,10 +390,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 return true;
-
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 }
